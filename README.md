@@ -8,13 +8,12 @@
 
 ## 用法：
 1. 编译生成jar:
-
 ```js
     ./gradlew build
 ```    
 
 2. 将生成的jar拷贝到主工程的**lint**目录，并将下列代码拷贝粘贴到主工程的**build.gradle**文件中：
-```
+```js
     task customLint() {
         dependsOn lint
     }
@@ -28,7 +27,7 @@
     customLint.dependsOn copyCustomLintJarToUserHomeLintDir
 ```
 3. 执行命令:
-```
+```js
     ./gradlew customLint
 ```
 
