@@ -16,7 +16,7 @@ Android自定义Lint检查
 ```    
 
 2. 将生成的jar拷贝到主工程的lint目录，并将下列代码拷贝粘贴到主工程的build.gradle文件中：
-
+```
     task customLint() {
         dependsOn lint
     }
@@ -28,9 +28,9 @@ Android自定义Lint检查
     }
     
     customLint.dependsOn copyCustomLintJarToUserHomeLintDir
-
+```
 3. 执行命令:
-
+```
     ./gradlew customLint
-
+```
 
