@@ -31,6 +31,19 @@
     ./gradlew customLint
 ```
 
+## 其它
+1. 删除用户目录下的lint.jar
+```js
+    task deleteCustomLintJar() {
+        doLast {
+            def lintDir = System.getProperty('user.home') + '/.android/lint/';
+            def lintFile = 'com.custom.lint-1.0.jar';
+            File file = new File(lintDir + lintFile);
+            file.delete();
+        }
+    }
+```
+
 ## 参考
 [Google](http://tools.android.com/tips/lint-custom-rules)
 
