@@ -37,3 +37,12 @@
 [美团](http://tech.meituan.com/android_custom_lint.html)
 
 [LinkedIn](https://engineering.linkedin.com/android/writing-custom-lint-checks-gradle)
+
+[https://github.com/bignerdranch/linette](https://github.com/bignerdranch/linette)
+
+[https://github.com/googlesamples/android-custom-lint-rules](https://github.com/googlesamples/android-custom-lint-rules)
+
+[https://github.com/skyisle/sonar-android](https://github.com/skyisle/sonar-android)
+
+[https://github.com/hehonghui/android-tech-frontier/blob/master/issue-33/如何自定义Lint规则.md](https://github.com/hehonghui/android-tech-frontier/blob/master/issue-33/如何自定义Lint规则.md)
+
