@@ -47,10 +47,4 @@ dependencies {
 
 defaultTasks 'assemble'
 
-task installSogouLint(type: Copy) {
-    from configurations.lintChecks
-    into System.getProperty('user.home') + '/.android/lint/'
-}
-
-
 

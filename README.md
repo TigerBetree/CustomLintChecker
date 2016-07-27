@@ -11,15 +11,24 @@ Android自定义Lint检查
 ## 用法：
 1. 编译生成jar:
 
-'''
-./gradlew build
-'''
+> ./gradlew build
 
-2. 将生成的jar拷贝到主工程的lint目录（参考Demo）
+2. 将生成的jar拷贝到主工程的lint目录，并将下列代码拷贝粘贴到主工程的build.gradle文件中：
+
+task customLint() {
+    dependsOn lint
+}
+
+// 拷贝自定义lint.jar到用户的/.android/lint/目录
+task copyCustomLintJarToUserHomeLintDir(type: Copy) {
+    from "lint/com.custom.lint-1.0.jar"
+    into System.getProperty('user.home') + '/.android/lint/'
+}
+
+customLint.dependsOn copyCustomLintJarToUserHomeLintDir
 
 3. 执行命令:
 
-'''
-./gradlew customLint
-'''
+> ./gradlew customLint
+
 
