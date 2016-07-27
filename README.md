@@ -26,7 +26,14 @@
     
     customLint.dependsOn copyCustomLintJarToUserHomeLintDir
 ```
-3. 执行命令，生成lint报告:
+3. 在**build.gradle**文件中添加如下：
+```js
+    lintOptions {
+        enable 'UseLogger', 'AvoidEnum', 'UseSparseArray', 'UseTextUtils'
+        check 'UseLogger', 'AvoidEnum', 'UseSparseArray', 'UseTextUtils'
+    }
+```
+4. 执行命令，生成lint报告:
 ```js
     ./gradlew customLint
 ```
