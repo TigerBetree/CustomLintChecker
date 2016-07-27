@@ -11,7 +11,10 @@ Android自定义Lint检查
 ## 用法：
 1. 编译生成jar:
 
+    ```
     ./gradlew build
+    
+    ```    
 
 2. 将生成的jar拷贝到主工程的lint目录，并将下列代码拷贝粘贴到主工程的build.gradle文件中：
 
