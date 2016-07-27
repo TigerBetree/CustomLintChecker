@@ -11,7 +11,7 @@ Android自定义Lint检查
 ## 用法：
 1. 编译生成jar:
 
-...
+...java
 ./gradlew build
 ...
 
@@ -19,6 +19,6 @@ Android自定义Lint检查
 
 3. 执行命令:
 
-... 
+...java 
 ./gradlew customLint
 ...
