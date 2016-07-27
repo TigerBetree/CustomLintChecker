@@ -21,12 +21,12 @@ dependencies {
 
 
 jar {
-    baseName 'com.sogou.lint'
+    baseName 'com.custom.lint'
     version '1.0'
 
     manifest {
         attributes 'Manifest-Version': 1.0
-        attributes('SogouLint-Registry': 'com.sogou.lint.registry.CustomIssueRegistry')
+        attributes('SogouLint-Registry': 'com.custom.lint.registry.CustomIssueRegistry')
     }
 }
 
