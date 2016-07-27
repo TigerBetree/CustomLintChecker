@@ -9,13 +9,13 @@
 
 ## 用法：
 
-###1.  编译生成**jar**，执行如下命令后在**build/libs**目录中找到**com.custom.lint-1.0.jar**<br/>
+1.  编译生成**jar**，执行如下命令后在**build/libs**目录中找到**com.custom.lint-1.0.jar**<br/>
 
 ```js
     ./gradlew build
 ```    
 
-###2.  将生成的**jar**拷贝到主工程的**lint**目录(需要自己创建lint目录)，并将下列代码拷贝粘贴到主工程的**build.gradle**文件中<br/>
+2.  将生成的**jar**拷贝到主工程的**lint**目录(需要自己创建lint目录)，并将下列代码拷贝粘贴到主工程的**build.gradle**文件中<br/>
 
 ```js
     task customLint() {
@@ -30,7 +30,7 @@
     
     customLint.dependsOn copyCustomLintJarToUserHomeLintDir
 ```
-###3.  在**build.gradle**文件中添加如下
+3.  在**build.gradle**文件中添加如下
 
 ```js
     lintOptions {
@@ -38,7 +38,7 @@
         check 'UseLogger', 'AvoidEnum', 'UseSparseArray', 'UseTextUtils'
     }
 ```
-###4.  执行命令，生成lint报告
+4.  执行命令，生成lint报告
 
 ```js
     ./gradlew customLint
