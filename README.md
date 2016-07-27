@@ -34,5 +34,7 @@
 
 ## 参考
 [Google](http://tools.android.com/tips/lint-custom-rules)
-[美团]（http://tech.meituan.com/android_custom_lint.html）
+
+[美团](http://tech.meituan.com/android_custom_lint.html)
+
 [LinkedIn](https://engineering.linkedin.com/android/writing-custom-lint-checks-gradle)
