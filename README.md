@@ -9,7 +9,7 @@
 ## 用法：
 1. 编译生成jar:
 
-```
+```js
     ./gradlew build
 ```    
 
