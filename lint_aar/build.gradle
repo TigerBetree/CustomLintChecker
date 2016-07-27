@@ -1,0 +1,41 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '23.0.1'
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName '1.0'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+project.afterEvaluate {
+    def compileLint = project.tasks.getByPath(':lint_aar:compileLint')
+    compileLint.dependsOn parent.tasks.getByName("jar")
+    compileLint << {
+        copy {
+            from '../build/libs'
+            into 'build/intermediates/lint'
+        }
+    }
+}
+
+tasks.withType(JavaCompile) { Task task ->
+    task.doFirst {
+        fileTree(project.buildDir) {
+            include '**/jars/lint.jar'
+        }.each { File file ->
+            file.renameTo(new File(file.parentFile.parentFile, file.getName()))
+        }
+    }
+}

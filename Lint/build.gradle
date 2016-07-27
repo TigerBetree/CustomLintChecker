@@ -1,0 +1,57 @@
+apply plugin: 'java'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.1.2'
+    }
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'com.android.tools.lint:lint-api:24.5.0'
+    compile 'com.android.tools.lint:lint-checks:24.5.0'
+}
+
+
+jar {
+    baseName 'com.sogou.lint'
+    version '1.0'
+
+    manifest {
+        attributes 'Manifest-Version': 1.0
+        attributes('SogouLint-Registry': 'com.sogou.lint.registry.CustomIssueRegistry')
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ["Lint/src/main/java"]
+        }
+    }
+}
+
+configurations {
+    lintChecks
+}
+
+dependencies {
+    lintChecks files(jar)
+}
+
+defaultTasks 'assemble'
+
+task install(type: Copy) {
+    from configurations.lintChecks
+    into System.getProperty('user.home') + '/.android/lint/'
+}
+
+
+
