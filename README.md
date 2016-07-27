@@ -1,12 +1,14 @@
 # Android自定义Lint检查
 
 ## 支持Lint类型：
+
 1. **UseLogger**: 查找代码中使用android.os.Log和System.out.print的地方，提示使用自己的Logger
 2. **AvoidEnum**: 查找代码中使用Enum的地方，提示使用常量代替（android建议避免使用Enum，因Enum较耗内存）
 3. **UseSparseArray**: 推荐使用SparseArray代替HashMap
 4. **UseTextUtils**: 字符串判空，避免使用 "".equals(str)或 str.equals("")，提示使用TextUtils.isEmpty(str)
 
 ## 用法：
+
 1. 编译生成**jar**，执行如下命令后在**build/libs**目录中找到**com.custom.lint-1.0.jar**:
 
 ```js
@@ -45,7 +47,8 @@
 ```
 
 ## 其它
-1.删除用户目录下的lint.jar
+
+1. 删除用户目录下的lint.jar
 
 ```js
     task deleteCustomLintJar() {
